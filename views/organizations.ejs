@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="../script.js" defer></script>
     <title>Document</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,7 @@
 <body>
     <nav>
         <a href="/">Home</a>
-        <a href="/organizations">Connect</a>
+        <a href="">Connect</a>
         <% if(locals.loggedIn == true){ %> 
             <a href="">Logout</a>
         <% }else { %> 
@@ -24,22 +25,25 @@
         <% } %> 
     </nav>
     <Header class="page-header">
-        
-        <div class="header-hero ">
-            <div class="container-narrow header-text ">
-                <h2>Meet classmates and make friends through activities.</h2>
-                <h1>Use <mark>Peer Connector!</mark></h1>
-            </div>
-
+        <div class="header-text header-hero">
+            <h1 class="close-text">Browse Organizations</h1>
+            <h2>or register your own. </h2>
+            <a href="/organizations/create">Register Your Org</a>
         </div>
     </Header>
     <main>
         <section>
-            <div class="container">
-                <h2>About</h2>
-                <p>
-                    Peer Connector is a platform that seeks to connect people within organizations, such as schools and businesses. People should use Peer Connect to build relationships and bond with people that they work or go to school with through activities, such as pickup games, video game tournaments, picnics, and anything else that can be done with a group.
-                </p>
+            <div class="container grid">
+                <%locals.orgs.forEach(org => { %>
+                    <a href="/organizations/<%= org.id %>">
+                    <div class="card">
+                        <div class="card-content">
+                            <h2><%= org.name %> </h2>
+                            <h3><%= org.state %> </h3>
+                        </div>
+                    </div>
+                    </a>
+                <% }) %>
             </div>
         </section>
     </main>

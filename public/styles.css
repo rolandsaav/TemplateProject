@@ -1,4 +1,175 @@
-:root,
+:root {
+}
 body {
   height: 100%;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3125rem;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 800;
+}
+h2 {
+  font-size: 2.25em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.75em;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: purple;
+}
+
+.page-header {
+  text-align: center;
+  max-width: 70.5rem;
+  line-height: normal;
+  margin: auto;
+  padding: 8rem 0;
+  background-image: url("https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1007&q=80");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.close-text {
+  line-height: 1em;
+  word-wrap: break-word;
+}
+
+section {
+  padding: 3rem 0;
+}
+
+.container {
+  box-sizing: border-box;
+  width: min(90%, 70.5rem);
+  margin-inline: auto;
+  padding: 0 1em;
+}
+
+.center {
+  padding: 2em 0;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-narrow {
+  max-width: 50rem;
+}
+
+.header-hero {
+  background-color: rgba(51, 51, 51, 0.719);
+  padding: 2em 0;
+}
+
+mark {
+  background-color: unset;
+  color: unset;
+}
+
+.header-text > h1 > mark {
+  color: rgb(255, 196, 34);
+}
+
+.normal-header {
+  text-align: center;
+}
+
+.header-text {
+  margin: auto;
+}
+
+nav {
+  color: rgb(34, 111, 255);
+  font-weight: 700;
+  margin: auto;
+  width: 100%;
+  max-width: 70.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-auto-rows: minmax(15rem, auto);
+  gap: 2rem;
+}
+
+.card {
+  font-size: 0.81em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid black 1px;
+  border-radius: 1em;
+  background-image: url(https://picsum.photos/id/1080/500/400);
+  background-position: center;
+  transition: transform 100ms;
+  color: white;
+}
+
+.card-tall > h3 {
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  padding: 0 1em;
+}
+
+.card-tall {
+  color: black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: unset;
+  background: none;
+  border-radius: unset;
+}
+
+.card-image {
+  display: block;
+  object-fit: cover;
+  height: 10em;
+  width: 100%;
+}
+
+.card:hover {
+  transform: scale(1.025);
+}
+
+.card-content {
+  width: 100%;
+  padding: 0.25em 0;
+}
+
+.create-form {
+  width: min(80%, 50rem);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group > input {
+  padding: 0.25rem;
+  font-size: 1.25em;
 }

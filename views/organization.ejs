@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../script.js" defer></script>
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Roboto+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/organizations">Connect</a>
+        <% if(locals.loggedIn == true){ %> 
+            <a href="">Logout</a>
+        <% }else { %> 
+            <a href="/">Login/Register</a>
+        <% } %> 
+    </nav>
+    <Header class="page-header">
+        <div class="header-text header-hero">
+            <h1 class="close-text"><%=org.name%></h1>
+        </div>
+    </Header>
+    <main>
+        <section class="container center">
+            <h2>Create an Activity</h2>
+            <form class="create-form" action="/organizations/<%=org.id%>/create" method="post">
+                <div class="input-group">
+                    <label for="">Activity Title</label>
+                    <input type="text" name="title" required>
+                </div>
+                <div class="input-group">
+                    <label for="">Activity Address</label>
+                    <input type="text" name="address" id="">
+                </div>
+
+                <div class="input-group">
+                    <label for="">Activity Time</label>
+                    <input type="datetime" name="time" id="">
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section>
+            <div class="container">
+                <h2>Activities</h2>
+            </div>
+            <div class="container grid">
+                <% if(locals.org.activities){ locals.org.activities.forEach(activity => { %> 
+                    <a href=<%=`/organizations/${orgId}/${activity.id}` %>>
+                        <div class="card card-tall">
+                            <img class="card-image" src="https://picsum.photos/500/500" alt="">
+                            <h2><%= activity.name %> </h2>
+                            <h3>Where: <%= activity.address %> </h3>
+                            <h3>When: <%= activity.time %> </h3>
+                        </div>
+                    </a>
+                <% })} else { %> 
+                    <h3>Nothing going on :(</h3>
+                <% } %> 
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
